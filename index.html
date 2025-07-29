@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công ty Cổ phần Dịch vụ & Công nghệ CTS - Giải Pháp Công Nghệ Toàn Diện Cho Doanh Nghiệp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Customizing Tailwind CSS with the new color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-color': '#0A2342',     // Deep Navy Blue
+                        'secondary-color': '#6C7A89',   // Cool Grey
+                        'accent-color': '#FF6D01',      // Vibrant Orange
+                        'background-color': '#F8F8F8',   // Soft White
+                        'text-charcoal': '#2C3E50',     // Charcoal Grey for main text
+                        'light-bg-variant': '#F0F2F5', // A subtle light grey for alternating sections
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--tw-text-charcoal); /* Apply Charcoal Grey using Tailwind's CSS variable */
+            background-color: var(--tw-background-color); /* Apply Soft White using Tailwind's CSS variable */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .section-padding {
+            padding: 4rem 0;
+        }
+        /* Custom brand styles for buttons using defined colors */
+        .btn-primary {
+            @apply inline-block px-8 py-3 rounded-lg text-white font-semibold shadow-md bg-accent-color hover:bg-opacity-90 transition-all duration-300;
+        }
+        .btn-secondary {
+            @apply inline-block px-8 py-3 rounded-lg font-semibold border-accent-color text-accent-color hover:bg-accent-color hover:text-white transition-all duration-300;
+        }
+        /* Special button styles for hero section (white background on gradient) */
+        .btn-hero-primary {
+            @apply inline-block px-8 py-3 rounded-lg font-semibold bg-white shadow-md text-accent-color hover:bg-gray-100 transition-colors duration-300;
+        }
+        .btn-hero-secondary {
+            @apply inline-block px-8 py-3 rounded-lg text-white font-semibold border-white hover:bg-white hover:text-accent-color transition-colors duration-300;
+        }
+
+        h1, h2, h3, h4 {
+            @apply font-bold mb-4 text-primary-color; /* Apply Deep Navy Blue for headings */
+        }
+        /* Override h1 on dark hero background */
+        #trang-chu h1 {
+            color: white;
+        }
+        h1 { @apply text-5xl; }
+        h2 { @apply text-4xl; }
+        h3 { @apply text-3xl; }
+        h4 { @apply text-2xl; }
+        p {
+            @apply mb-4 leading-relaxed;
+        }
+        ul {
+            @apply list-disc list-inside mb-4;
+        }
+        ul li {
+            @apply mb-2;
+        }
+        /* Card hover effect */
+        .card-hover-effect {
+            @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+        }
+        /* Text shadow for main headings */
+        .heading-shadow {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        /* Custom light background variant */
+        .bg-light-variant {
+            background-color: var(--tw-light-bg-variant);
+        }
+        /* Text colors to replace old gray shades */
+        .text-default {
+            color: var(--tw-text-charcoal);
+        }
+        .text-subtle {
+            color: var(--tw-secondary-color);
+        }
+        .text-highlight {
+            color: var(--tw-accent-color);
+        }
+        .text-strong {
+            color: var(--tw-primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container flex justify-between items-center">
+            <div class="flex items-center">
+                <img width="90px" height="100px" src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/cts-logo-30.06-1.png" alt="CTS Logo" class="h-10 mr-3">
+                <span class="text-3xl font-bold text-primary-color">
+    
+                </span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#trang-chu" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Trang chủ</a></li>
+                    <li><a href="#ve-chung-toi" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Về chúng tôi</a></li>
+                    <li><a href="#dich-vu" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Dịch vụ</a></li>
+                    <li><a href="#du-an-khach-hang" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Dự án / Khách hàng</a></li>
+                    <li><a href="#doi-ngu" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Đội ngũ</a></li>
+                    <li><a href="#tin-tuc-blog" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Tin tức – Blog</a></li>
+                    <li><a href="#tuyen-dung" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Tuyển dụng</a></li>
+                    <li><a href="#lien-he" class="text-default hover:text-accent-color font-medium transition-colors duration-200">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="trang-chu" class="section-padding bg-gradient-to-r from-primary-color via-secondary-color to-accent-color text-white text-center">
+        <div class="container py-16">
+            <h1 class="text-6xl mb-6 leading-tight heading-shadow">Chào mừng đến với Công ty cổ phần dịch vụ & Công nghệ CTS – <br> Nâng Tầm Doanh Nghiệp Cùng Công Nghệ Tiên Tiến</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Công ty cổ phần dịch vụ & Công nghệ CTS là đối tác công nghệ đáng tin cậy, chuyên cung cấp các giải pháp và dịch vụ Công nghệ Thông tin toàn diện, giúp doanh nghiệp tối ưu hóa hoạt động, nâng cao hiệu quả và bứt phá trong kỷ nguyên số. Chúng tôi cam kết mang đến giá trị thực sự thông qua sự kết hợp giữa chuyên môn sâu rộng, công nghệ tiên phong và sự tận tâm với từng khách hàng.
+            </p>
+            <div class="space-x-4">
+                <a href="#lien-he" class="btn-hero-primary">LIÊN HỆ NGAY</a>
+                <a href="#dich-vu" class="btn-hero-secondary">XEM DỊCH VỤ</a>
+            </div>
+            <div class="mt-12">
+                <!-- Image of a diverse team collaborating in a modern office, using technology -->
+                <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/z6443428699374_4a9a8a82216320fec40c06dc85abcecf.jpg" alt="Đội ngũ làm việc trong văn phòng hiện đại" class="rounded-lg shadow-xl mx-auto card-hover-effect">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section (from Home Page content) -->
+    <section class="section-padding bg-background-color">
+        <div class="container text-center">
+            <h2 class="text-primary-color mb-12 heading-shadow">Dịch Vụ Nổi Bật – Giải Pháp Toàn Diện Cho Doanh Nghiệp</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 border rounded-lg shadow-sm bg-background-color card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-accent-color">Phát triển Dự án CNTT theo yêu cầu</h3>
+                    <p class="text-default">Chuyển hóa ý tưởng thành phần mềm và hệ thống hoạt động hiệu quả, đáp ứng chính xác nhu cầu đặc thù của bạn.</p>
+                </div>
+                <div class="p-6 border rounded-lg shadow-sm bg-background-color card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-accent-color">Cung cấp Nhân sự CNTT chất lượng cao</h3>
+                    <p class="text-default">Bổ sung đội ngũ chuyên gia tài năng, linh hoạt theo mô hình onsite hoặc offsite, tối ưu nguồn lực cho dự án của bạn.</p>
+                </div>
+                <div class="p-6 border rounded-lg shadow-sm bg-background-color card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-accent-color">Tư vấn & Triển khai Hệ thống Doanh nghiệp</h3>
+                    <p class="text-default">Chuyên sâu trong các giải pháp ERP, HRM, CRM, BPM, giúp tự động hóa quy trình, quản lý hiệu suất và nâng cao trải nghiệm khách hàng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section (from Home Page content) -->
+    <section class="section-padding bg-light-variant">
+        <div class="container">
+            <h2 class="text-primary-color text-center mb-12 heading-shadow">Tại Sao Chọn Công ty cổ phần dịch vụ & Công nghệ CTS?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-background-color rounded-lg shadow card-hover-effect">
+                    <h4 class="text-accent-color mb-2">Chuyên môn vượt trội</h4>
+                    <p class="text-default">Đội ngũ chuyên gia giàu kinh nghiệm, nắm vững công nghệ tiên tiến và sâu sắc về nghiệp vụ đa ngành.</p>
+                </div>
+                <div class="text-center p-6 bg-background-color rounded-lg shadow card-hover-effect">
+                    <h4 class="text-accent-color mb-2">Giải pháp linh hoạt</h4>
+                    <p class="text-default">Tùy chỉnh theo đặc thù từng doanh nghiệp, đảm bảo phù hợp và mang lại hiệu quả tối đa.</p>
+                </div>
+                <div class="text-center p-6 bg-background-color rounded-lg shadow card-hover-effect">
+                    <h4 class="text-accent-color mb-2">Đối tác tận tâm</h4>
+                    <p class="text-default">Chúng tôi không chỉ là nhà cung cấp mà còn là người đồng hành, cam kết mang đến sự hài lòng và thành công lâu dài.</p>
+                </div>
+                <div class="text-center p-6 bg-background-color rounded-lg shadow card-hover-effect">
+                    <h4 class="text-accent-color mb-2">Cam kết chất lượng</h4>
+                    <p class="text-default">Quy trình làm việc chuyên nghiệp, chuẩn mực quốc tế, đảm bảo chất lượng và tiến độ cho mọi dự án.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="ve-chung-toi" class="section-padding bg-background-color">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Về Chúng Tôi – Hành Trình Kiến Tạo Giá Trị Số</h2>
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/vp_dnt.jpg" alt="Văn phòng hiện đại" class="rounded-lg shadow-lg card-hover-effect">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg text-default mb-4">
+                        Công ty cổ phần dịch vụ & Công nghệ CTS được thành lập với sứ mệnh trở thành đối tác công nghệ chiến lược, mang đến những giải pháp đột phá và nhân lực chất lượng cao, giúp doanh nghiệp Việt Nam và quốc tế phát triển bền vững. Từ những ngày đầu thành lập, chúng tôi đã không ngừng nỗ lực, tích lũy kinh nghiệm và đổi mới để đáp ứng nhu cầu ngày càng cao của thị trường CNTT.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-primary-color mb-3">Tầm Nhìn & Sứ Mệnh</h3>
+                    <p class="text-default">
+                        <strong class="text-strong">Tầm Nhìn:</strong> Trở thành công ty CNTT hàng đầu Việt Nam, được công nhận về năng lực chuyên môn, uy tín dịch vụ và khả năng kiến tạo những giá trị vượt trội cho khách hàng và cộng đồng.
+                    </p>
+                    <p class="text-default">
+                        <strong class="text-strong">Sứ Mệnh:</strong> Cung cấp các giải pháp CNTT toàn diện, hiệu quả và phù hợp nhất cho khách hàng; Xây dựng môi trường làm việc chuyên nghiệp, năng động cho nhân viên; Đóng góp vào sự phát triển của ngành CNTT Việt Nam.
+                    </p>
+                    <a href="#dich-vu" class="btn-primary mt-6">Khám phá Dịch vụ của chúng tôi</a>
+                </div>
+            </div>
+            <hr class="border-secondary-color my-12 opacity-50">
+            <h3 class="text-center text-primary-color text-3xl mb-8">Giá Trị Cốt Lõi</h3>
+            <div class="grid md:grid-cols-5 gap-6 text-center">
+                <div class="p-4 bg-light-variant rounded-lg shadow-sm card-hover-effect">
+                    <h4 class="font-semibold text-xl text-accent-color">Chuyên Nghiệp</h4>
+                    <p class="text-default text-sm">Luôn tuân thủ các tiêu chuẩn cao nhất.</p>
+                </div>
+                <div class="p-4 bg-light-variant rounded-lg shadow-sm card-hover-effect">
+                    <h4 class="font-semibold text-xl text-accent-color">Sáng Tạo</h4>
+                    <p class="text-default text-sm">Không ngừng tìm tòi, ứng dụng công nghệ mới.</p>
+                </div>
+                <div class="p-4 bg-light-variant rounded-lg shadow-sm card-hover-effect">
+                    <h4 class="font-semibold text-xl text-accent-color">Tận Tâm</h4>
+                    <p class="text-default text-sm">Lắng nghe, thấu hiểu và đặt lợi ích khách hàng lên hàng đầu.</p>
+                </div>
+                <div class="p-4 bg-light-variant rounded-lg shadow-sm card-hover-effect">
+                    <h4 class="font-semibold text-xl text-accent-color">Hợp Tác</h4>
+                    <p class="text-default text-sm">Xây dựng mối quan hệ tin cậy, minh bạch.</p>
+                </div>
+                <div class="p-4 bg-light-variant rounded-lg shadow-sm card-hover-effect">
+                    <h4 class="font-semibold text-xl text-accent-color">Chất Lượng</h4>
+                    <p class="text-default text-sm">Đảm bảo mọi sản phẩm và dịch vụ đạt chất lượng cao nhất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Detailed) -->
+    <section id="dich-vu" class="section-padding bg-light-variant">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Dịch Vụ – Giải Pháp Công Nghệ Thông Tin Toàn Diện</h2>
+
+            <div class="mb-12 p-8 bg-background-color rounded-lg shadow-md card-hover-effect">
+                <h3 class="text-primary-color mb-4 text-2xl font-semibold">1. Phát Triển Dự Án CNTT Theo Yêu Cầu</h3>
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="md:w-2/3">
+                        <p class="text-default">Chúng tôi biến những ý tưởng phức tạp thành các sản phẩm phần mềm chất lượng cao, đáp ứng chính xác nhu cầu đặc thù của doanh nghiệp.</p>
+                        <ul class="list-disc list-inside ml-4 text-default">
+                            <li><strong class="text-strong">Phát triển phần mềm theo yêu cầu:</strong> Xây dựng các ứng dụng web, di động, hệ thống quản lý chuyên biệt.</li>
+                            <li><strong class="text-strong">Tùy chỉnh và nâng cấp phần mềm:</strong> Cải tiến, mở rộng hoặc tích hợp các hệ thống hiện có.</li>
+                            <li><strong class="text-strong">Dịch vụ Outsourcing:</strong> Cung cấp đội ngũ phát triển chuyên trách hoặc mở rộng năng lực đội ngũ nội bộ.</li>
+                            <li><strong class="text-strong">Công nghệ nổi bật:</strong> Java, .NET, Python, Node.js, React, Angular, Vue.js, Mobile (iOS/Android native, React Native, Flutter), Cloud (AWS, Azure, Google Cloud).</li>
+                        </ul>
+                        <p class="font-semibold text-default">Lợi ích:</p>
+                        <ul class="list-disc list-inside ml-4 text-default">
+                            <li>Phần mềm phù hợp 100% với quy trình kinh doanh của bạn.</li>
+                            <li>Tiết kiệm chi phí và thời gian phát triển.</li>
+                            <li>Đảm bảo chất lượng, bảo mật và khả năng mở rộng.</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <!-- Image of a modern UI/UX design mockup for a business application -->
+                        <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/light-trails-buildings.jpg" alt="Giao diện phần mềm tùy chỉnh" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 p-8 bg-background-color rounded-lg shadow-md card-hover-effect">
+                <h3 class="text-primary-color mb-4 text-2xl font-semibold">2. Cung Cấp Nhân Sự CNTT (Onsite & Offsite)</h3>
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="md:w-2/3 order-2 md:order-1">
+                        <p class="text-default">Tìm kiếm và cung cấp nhân sự CNTT chất lượng cao, giúp bạn nhanh chóng bổ sung nguồn lực chuyên môn cho các dự án ngắn hạn hoặc dài hạn.</p>
+                        <ul class="list-disc list-inside ml-4 text-default">
+                            <li><strong class="text-strong">Mô hình Onsite:</strong> Chuyên gia của chúng tôi sẽ làm việc trực tiếp tại văn phòng của khách hàng.</li>
+                            <li><strong class="text-strong">Mô hình Offsite:</strong> Đội ngũ chuyên gia làm việc tại văn phòng của chúng tôi, phối hợp từ xa.</li>
+                            <li><strong class="text-strong">Các vị trí phổ biến:</strong> Lập trình viên, Kỹ sư QA/QC, Chuyên viên phân tích nghiệp vụ (BA), Quản lý dự án (PM), Kiến trúc sư giải pháp.</li>
+                        </ul>
+                        <p class="font-semibold text-default">Lợi ích:</p>
+                        <ul class="list-disc list-inside ml-4 text-default">
+                            <li>Tiếp cận nhanh chóng nguồn nhân lực chất lượng cao, giảm thời gian tuyển dụng.</li>
+                            <li>Linh hoạt điều chỉnh quy mô đội ngũ theo nhu cầu dự án.</li>
+                            <li>Đảm bảo chuyên môn và kinh nghiệm phù hợp.</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 flex-shrink-0 order-1 md:order-2">
+                        <!-- Image of a team of data scientists/engineers working together -->
+                        <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/standard-quality-control-collage-concept.jpg" alt="Cung cấp nhân sự CNTT" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 p-8 bg-background-color rounded-lg shadow-md card-hover-effect">
+                <h3 class="text-primary-color mb-4 text-2xl font-semibold">3. Tư Vấn & Triển Khai Hệ Thống Phần Mềm Doanh Nghiệp (ERP, HRM, CRM, BPM)</h3>
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="md:w-2/3">
+                        <p class="text-default">Chúng tôi là chuyên gia trong việc tư vấn và triển khai các hệ thống phần mềm quản lý doanh nghiệp cốt lõi, giúp tối ưu hóa vận hành, quản lý dữ liệu hiệu quả và nâng cao năng suất.</p>
+                        <ul class="list-disc list-inside ml-4 text-default">
+                            <li><strong class="text-strong">Hệ thống ERP (Enterprise Resource Planning):</strong> Tích hợp và quản lý toàn bộ các quy trình kinh doanh.</li>
+                            <li><strong class="text-strong">Hệ thống HRM (Human Resource Management):</strong> Tự động hóa các nghiệp vụ nhân sự.</li>
+                            <li><strong class="text-strong">Hệ thống CRM (Customer Relationship Management):</strong> Quản lý toàn diện mối quan hệ khách hàng.</li>
+                            <li><strong class="text-strong">Hệ thống BPM (Business Process Management):</strong> Phân tích, thiết kế, triển khai và tối ưu hóa các quy trình nghiệp vụ.</li>
+                        </ul>
+                        <p class="font-semibold text-default">Lợi ích:</p>
+                        <ul class="list-disc list-inside ml-4 text-default">
+                            <li>Nâng cao hiệu quả quản lý và ra quyết định.</li>
+                            <li>Tối ưu hóa quy trình, giảm thiểu sai sót và chi phí.</li>
+                            <li>Tăng cường khả năng hợp tác và chia sẻ thông tin.</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <!-- Image of business people collaborating around a whiteboard with diagrams of software systems (ERP, CRM) -->
+                        <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/2111.i101.013.s.m004.c13.digital-transformation-digitization-isometric.jpg" alt="Hệ thống quản lý doanh nghiệp" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#lien-he" class="btn-primary">Liên hệ để được tư vấn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Clients Section -->
+    <section id="du-an-khach-hang" class="section-padding bg-background-color">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Dự Án / Khách Hàng Tiêu Biểu – Minh Chứng Năng Lực</h2>
+
+            <h3 class="text-primary-color mb-8 text-2xl font-semibold">Khách Hàng Tiêu Biểu Của Chúng Tôi</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+                <!-- Client Logos -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/FPT_Software_logo.svg" alt="Logo FPT" class="w-full h-auto object-contain rounded-md shadow-sm card-hover-effect">
+                <img src="https://www.healthtechalpha.com/_next/image?url=https%3A%2F%2Fcdn.healthtechalpha.com%2Fstatic%2FcorporatesById%2F11803.webp&w=256&q=75" alt="Logo CMC Global" class="w-full h-auto object-contain rounded-md shadow-sm card-hover-effect">
+                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-Napas.png" alt="Logo Ngân hàng A" class="w-full h-auto object-contain rounded-md shadow-sm card-hover-effect">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="Logo Công ty Tài chính B" class="w-full h-auto object-contain rounded-md shadow-sm card-hover-effect">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Logo_TPBank.svg" alt="Logo Tập đoàn Sản xuất C" class="w-full h-auto object-contain rounded-md shadow-sm card-hover-effect">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Logo_BIDV.svg" alt="Logo Chuỗi Siêu thị F" class="w-full h-auto object-contain rounded-md shadow-sm card-hover-effect">
+            </div>
+
+            <h3 class="text-primary-color mb-8 text-2xl font-semibold">Điển Hình Các Dự Án</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-bold text-primary-color text-xl mb-3">Dự án: Triển khai giải pháp Cổng Thanh toán</h4>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Mô tả:</strong> Thiết lập và tích hợp cổng thanh toán an toàn, hiệu quả cho các giao dịch trực tuyến.</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Giá trị mang lại:</strong> Đơn giản hóa quy trình thanh toán, nâng cao trải nghiệm khách hàng và tăng cường bảo mật giao dịch.</p>
+                    <!-- Screenshot of a payment gateway interface -->
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/2210.i201.027.s.m004.c13.contract-agreement-isometric.jpg" alt="Giao diện cổng thanh toán" class="rounded-lg shadow-sm mt-4">
+                </div>
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-bold text-primary-color text-xl mb-3">Dự án: Triển khai nền tảng Backbase cho Ngân hàng</h4>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Mô tả:</strong> Tùy chỉnh và triển khai nền tảng tương tác số Backbase, hiện đại hóa trải nghiệm ngân hàng số.</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Giá trị mang lại:</strong> Nâng cao khả năng phục vụ khách hàng đa kênh, tối ưu hóa quy trình nghiệp vụ ngân hàng và cải thiện hiệu suất hoạt động.</p>
+                    <!-- Screenshot of a Backbase banking interface -->
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/backbase-logo-png-transparent.png" alt="Giao diện ngân hàng Backbase" class="rounded-lg shadow-sm mt-4">
+                </div>
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-bold text-primary-color text-xl mb-3">Dự án: Triển khai giải pháp trục tích hợp ESB (Enterprise Service Bus)</h4>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Mô tả:</strong> Xây dựng và triển khai trục tích hợp dữ liệu tập trung, kết nối các hệ thống rời rạc trong doanh nghiệp.</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Giá trị mang lại:</strong> Tăng cường khả năng giao tiếp giữa các ứng dụng, đảm bảo tính nhất quán của dữ liệu và đẩy nhanh tốc độ luân chuyển thông tin.</p>
+                    <!-- Diagram of an ESB architecture -->
+                    <img src="https://hinet.com.vn/sites/default/files/images/truc-tich-hop-esb-enterprise-service-bus-trong-xay-dung-chinh-phu-dien-tu.jpg" alt="Kiến trúc ESB" class="rounded-lg shadow-sm mt-4">
+                </div>
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-bold text-primary-color text-xl mb-3">Dự án: Tham gia thực hiện các dự án Chuyển đổi số</h4>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Mô tả:</strong> Đồng hành cùng các doanh nghiệp trong hành trình chuyển đổi số toàn diện, từ tư vấn chiến lược đến triển khai giải pháp công nghệ.</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Giá trị mang lại:</strong> Giúp doanh nghiệp tối ưu hóa quy trình, nâng cao năng lực cạnh tranh và thích nghi với kỷ nguyên số.</p>
+                    <!-- Image of digital transformation concepts -->
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/2111.i101.013.s.m004.c13.digital-transformation-digitization-isometric.jpg" alt="Chuyển đổi số" class="rounded-lg shadow-sm mt-4">
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#lien-he" class="btn-primary">Hãy Trở Thành Đối Tác Tiếp Theo Của Chúng Tôi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="doi-ngu" class="section-padding bg-light-variant">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Đội Ngũ – Nền Tảng Sức Mạnh Của Công ty cổ phần dịch vụ & Công nghệ CTS</h2>
+            <div class="flex flex-col md:flex-row items-center gap-10 mb-12">
+                <div class="md:w-1/2">
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/z6443176453011_9cd74de644aad88d10f9c70e8b2026b3.jpg" alt="Đội ngũ hợp tác" class="rounded-lg shadow-lg card-hover-effect">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-primary-color text-2xl font-semibold mb-4">Văn Hóa Đội Ngũ</h3>
+                    <p class="text-default mb-4">
+                        Chúng tôi xây dựng một môi trường làm việc cởi mở, khuyến khích sự sáng tạo, học hỏi không ngừng và tinh thần hợp tác. Tại đây, mỗi cá nhân đều được trao quyền để phát huy tối đa năng lực, đóng góp vào sự phát triển chung và đạt được những thành công cá nhân.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-default">
+                        <li><strong class="text-highlight">Chuyên nghiệp:</strong> Luôn duy trì tác phong làm việc chuẩn mực.</li>
+                        <li><strong class="text-highlight">Sáng tạo & Đổi mới:</strong> Khuyến khích tư duy đột phá.</li>
+                        <li><strong class="text-highlight">Học hỏi liên tục:</strong> Đội ngũ luôn cập nhật kiến thức mới.</li>
+                        <li><strong class="text-highlight">Hợp tác & Chia sẻ:</strong> Tinh thần đồng đội được đề cao.</li>
+                        <li><strong class="text-highlight">Tận tâm:</strong> Cam kết hoàn thành công việc với chất lượng cao nhất.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary-color my-12 opacity-50">
+
+            <h3 class="text-center text-primary-color text-2xl font-semibold mb-8">Ban Lãnh Đạo</h3>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/img_8752.jpg" alt="Ảnh chân dung CEO" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-xl mb-1 text-primary-color">Đào Xuân Thắng</h4>
+                    <p class="text-default mb-2">CEO & Người sáng lập</p>
+                    <p class="text-subtle text-sm">Với hơn 10 năm kinh nghiệm, là người có tầm nhìn chiến lược, dẫn dắt công ty.</p>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/img_8752.jpg" alt="Ảnh chân dung CTO" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-xl mb-1 text-primary-color">Đào Xuân Thắng</h4>
+                    <p class="text-default mb-2">CTO (Giám đốc Công nghệ)</p>
+                    <p class="text-subtle text-sm">Kiến trúc sư giải pháp tài năng, phụ trách phát triển và áp dụng công nghệ tiên tiến.</p>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/img_8752.jpg" alt="Ảnh chân dung Giám đốc Phát triển Kinh doanh" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-xl mb-1 text-primary-color">Đào Xuân Thắng</h4>
+                    <p class="text-default mb-2">Giám đốc Phát triển Kinh doanh</p>
+                    <p class="text-subtle text-sm">Với khả năng thấu hiểu thị trường, đã mở rộng mạng lưới khách hàng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Blog Section -->
+    <section id="tin-tuc-blog" class="section-padding bg-background-color">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Tin Tức – Blog: Cập Nhật Xu Hướng & Chia Sẻ Kiến Thức</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <img src="https://placehold.co/600x350/FFE0B2/333333?text=Digital+Transformation" alt="Hình ảnh chuyển đổi số" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-primary-color mb-2">Xu Hướng Chuyển Đổi Số 2025: Những Lĩnh Vực Doanh Nghiệp Cần Quan Tâm</h3>
+                    <p class="text-default mb-3 text-sm">Tổng hợp và phân tích các xu hướng công nghệ định hình tương lai, giúp doanh nghiệp chuẩn bị sẵn sàng cho kỷ nguyên số.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">Đọc thêm &rarr;</a>
+                </div>
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <img src="https://placehold.co/600x350/C5CAE9/333333?text=ERP+Implementation" alt="Hình ảnh triển khai ERP" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-primary-color mb-2">Triển Khai ERP Cho Ngành Sản Xuất: Bài Học Từ Thực Tiễn</h3>
+                    <p class="text-default mb-3 text-sm">Chia sẻ kinh nghiệm quý báu trong quá trình triển khai hệ thống ERP cho các nhà máy sản xuất, kèm theo các lời khuyên hữu ích.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">Đọc thêm &rarr;</a>
+                </div>
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <img src="https://placehold.co/600x350/B2EBF2/333333?text=Software+Team" alt="Hình ảnh đội ngũ phần mềm" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-primary-color mb-2">Làm Thế Nào Để Xây Dựng Đội Ngũ Phát Triển Phần Mềm Tinh Gọn và Hiệu Quả?</h3>
+                    <p class="text-default mb-3 text-sm">Những gợi ý và chiến lược để tối ưu hóa quy trình và cấu trúc đội ngũ phát triển phần mềm, áp dụng cho cả mô hình onsite và offsite.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">Đọc thêm &rarr;</a>
+                </div>
+                <div class="p-6 bg-light-variant rounded-lg shadow-md card-hover-effect">
+                    <img src="https://placehold.co/600x350/DCEDC8/333333?text=ISO+Certification" alt="Hình ảnh chứng nhận ISO" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-primary-color mb-2">Công ty cổ phần dịch vụ & Công nghệ CTS Đạt Chứng Nhận ISO 27001 về Bảo Mật Thông Tin</h3>
+                    <p class="text-default mb-3 text-sm">Thông báo về việc công ty đạt chứng nhận quan trọng, khẳng định cam kết về bảo mật dữ liệu và chất lượng dịch vụ.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">Đọc thêm &rarr;</a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#lien-he" class="btn-primary">Đăng ký nhận bản tin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="tuyen-dung" class="section-padding bg-light-variant">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Tuyển Dụng – Cùng Công ty cổ phần dịch vụ & Công nghệ CTS Kiến Tạo Tương Lai</h2>
+            <div class="flex flex-col md:flex-row items-center gap-10 mb-12">
+                <div class="md:w-1/2">
+                    <img src="https://duyhiep0612.wordpress.com/wp-content/uploads/2025/07/z6443428699374_4a9a8a82216320fec40c06dc85abcecf.jpg" alt="Hình ảnh gia nhập đội ngũ" class="rounded-lg shadow-lg card-hover-effect">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-primary-color text-2xl font-semibold mb-4">Tại Sao Chọn Công ty cổ phần dịch vụ & Công nghệ CTS?</h3>
+                    <ul class="list-disc list-inside ml-4 text-default">
+                        <li><strong class="text-highlight">Môi trường làm việc chuyên nghiệp & năng động:</strong> Phát huy tối đa khả năng, làm việc với công nghệ tiên tiến.</li>
+                        <li><strong class="text-highlight">Cơ hội phát triển sự nghiệp:</strong> Lộ trình thăng tiến rõ ràng, đào tạo nội bộ và bên ngoài.</li>
+                        <li><strong class="text-highlight">Văn hóa học hỏi & chia sẻ:</strong> Đội ngũ chuyên gia giàu kinh nghiệm sẵn sàng chia sẻ kiến thức.</li>
+                        <li><strong class="text-highlight">Chế độ đãi ngộ hấp dẫn:</strong> Mức lương cạnh tranh, phúc lợi toàn diện.</li>
+                        <li><strong class="text-highlight">Cân bằng cuộc sống & công việc:</strong> Khuyến khích sự cân bằng với các hoạt động teambuilding.</li>
+                        <li><strong class="text-highlight">Đóng góp ý nghĩa:</strong> Cơ hội tham gia vào các dự án có tác động lớn.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary-color my-12 opacity-50">
+
+            <h3 class="text-center text-primary-color text-2xl font-semibold mb-8">Các Vị Trí Đang Tuyển Dụng</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-semibold text-xl text-primary-color mb-2">Kỹ sư Phát triển Phần mềm</h4>
+                    <p class="text-default mb-3 text-sm">Java/.NET/Python/Node.js. Kinh nghiệm [số] năm.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">XEM CHI TIẾT &rarr;</a>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-semibold text-xl text-primary-color mb-2">Kỹ sư Phát triển Web (Front-end)</h4>
+                    <p class="text-default mb-3 text-sm">React/Angular/Vue.js. Kiến thức vững chắc về UI/UX.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">XEM CHI TIẾT &rarr;</a>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-semibold text-xl text-primary-color mb-2">Chuyên viên Phân tích Nghiệp vụ (BA)</h4>
+                    <p class="text-default mb-3 text-sm">Kinh nghiệm [số] năm trong CNTT, khả năng phân tích tốt.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">XEM CHI TIẾT &rarr;</a>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-semibold text-xl text-primary-color mb-2">Quản lý Dự án CNTT (PM)</h4>
+                    <p class="text-default mb-3 text-sm">Kinh nghiệm [số] năm quản lý, có chứng chỉ PMP/Agile.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">XEM CHI TIẾT &rarr;</a>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-semibold text-xl text-primary-color mb-2">Chuyên viên Tư vấn & Triển khai Giải pháp ERP/CRM/HRM</h4>
+                    <p class="text-default mb-3 text-sm">Kinh nghiệm triển khai hệ thống quản lý doanh nghiệp.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">XEM CHI TIẾT &rarr;</a>
+                </div>
+                <div class="p-6 bg-background-color rounded-lg shadow-md card-hover-effect">
+                    <h4 class="font-semibold text-xl text-primary-color mb-2">Chuyên gia Data Engineer / Data Scientist</h4>
+                    <p class="text-default mb-3 text-sm">Kinh nghiệm [số] năm, thành thạo công cụ và nền tảng Big Data.</p>
+                    <a href="#" class="text-accent-color font-medium hover:underline">XEM CHI TIẾT &rarr;</a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#lien-he" class="btn-primary">Gửi Hồ Sơ Của Bạn</a>
+                <p class="text-default mt-4">Hoặc gửi email đến: <a href="mailto:tuyendung@ctsco.vn" class="text-accent-color hover:underline">tuyendung@ctsco.vn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="lien-he" class="section-padding bg-background-color">
+        <div class="container">
+            <h2 class="text-center text-primary-color mb-12 heading-shadow">Liên Hệ – Chúng Tôi Luôn Sẵn Lòng Lắng Nghe Bạn</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-primary-color text-2xl font-semibold mb-4">Thông Tin Liên Hệ</h3>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Tên công ty:</strong> Công ty cổ phần dịch vụ & Công nghệ CTS</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Địa chỉ:</strong> Tầng 14, tòa nhà Hapro, số 11B Cát Linh, Phường Quốc Tử Giám, Quận Đống Đa, Thành phố Hà Nội, Việt Nam</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Hotline:</strong> <a href="tel:0568912222" class="text-primary-color hover:text-accent-color hover:underline">05.68.91.2222</a></p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Email Khách hàng & Đối tác:</strong> <a href="mailto:contact@ctsco.vn" class="text-primary-color hover:text-accent-color hover:underline">contact@ctsco.vn</a></p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Email Tuyển dụng:</strong> <a href="mailto:tuyendung@ctsco.vn" class="text-primary-color hover:text-accent-color hover:underline">tuyendung@ctsco.vn</a></p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Mã số thuế:</strong> 0110302356</p>
+                    <p class="mb-2 text-default"><strong class="text-highlight">Giờ làm việc:</strong> Từ thứ 2 đến thứ 6: 8h - 17h, Thứ 7: 8h - 12h.</p>
+
+                    <h3 class="text-primary-color text-2xl font-semibold mt-8 mb-4">Kết Nối Với Chúng Tôi</h3>
+                    <div class="flex space-x-4">
+                        <a href="[Link tới trang LinkedIn của công ty]" target="_blank" class="text-secondary-color hover:text-accent-color transition-colors duration-200">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/ctsco.vn/" target="_blank" class="text-secondary-color hover:text-accent-color transition-colors duration-200">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H9.375v-3.46h2.75V7.396c0-2.723 1.652-4.204 4.07-4.204 1.153 0 2.144.086 2.433.124v3.155h-1.979c-1.222 0-1.459.58-1.459 1.423v1.944h3.5l-.532 3.46h-2.99V24C19.612 22.954 24 17.99 24 12z" />
+                            </svg>
+                        </a>
+                        <!-- Add more social icons if needed -->
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-primary-color text-2xl font-semibold mb-4">Gửi Yêu Cầu Cho Chúng Tôi</h3>
+                    <form action="#" method="POST" class="bg-light-variant p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-default font-semibold mb-2">Họ và Tên:</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-secondary-color focus:outline-none focus:ring-2 focus:ring-accent-color" placeholder="Tên của bạn">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-default font-semibold mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-secondary-color focus:outline-none focus:ring-2 focus:ring-accent-color" placeholder="email@example.com">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-default font-semibold mb-2">Số Điện Thoại:</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 rounded-lg border border-secondary-color focus:outline-none focus:ring-2 focus:ring-accent-color" placeholder="0123 456 789">
+                        </div>
+                        <div class="mb-4">
+                            <label for="company" class="block text-default font-semibold mb-2">Công Ty:</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-2 rounded-lg border border-secondary-color focus:outline-none focus:ring-2 focus:ring-accent-color" placeholder="Tên công ty của bạn">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-default font-semibold mb-2">Lĩnh vực quan tâm:</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interest" value="phat-trien-cntt" class="form-checkbox text-accent-color rounded">
+                                    <span class="ml-2 text-default">Phát triển Dự án CNTT theo yêu cầu</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interest" value="nhan-su-cntt" class="form-checkbox text-accent-color rounded">
+                                    <span class="ml-2 text-default">Cung cấp Nhân sự CNTT</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interest" value="tu-van-trien-khai" class="form-checkbox text-accent-color rounded">
+                                    <span class="ml-2 text-default">Tư vấn & Triển khai ERP/HRM/CRM/BPM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interest" value="co-hoi-nghe-nghiep" class="form-checkbox text-accent-color rounded">
+                                    <span class="ml-2 text-default">Cơ hội nghề nghiệp</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interest" value="khac" class="form-checkbox text-accent-color rounded">
+                                    <span class="ml-2 text-default">Khác</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-default font-semibold mb-2">Nội dung tin nhắn:</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 rounded-lg border border-secondary-color focus:outline-none focus:ring-2 focus:ring-accent-color" placeholder="Nội dung yêu cầu của bạn"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">GỬI YÊU CẦU</button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-12">
+                <h3 class="text-primary-color text-2xl font-semibold mb-4 text-center">Bản Đồ Vị Trí</h3>
+                <!-- Google Maps iframe for Tầng 14, tòa nhà Hapro, số 11B Cát Linh, Hà Nội -->
+                <div class="relative w-full" style="padding-bottom: 56.25%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3820257322964!2d105.82390831490211!3d21.01170758600115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7c449c251d%3A0xb3e1c61b2e1b4b1a!2zMTFCIEPDoXQgTGluaCwgUXXhuq1uIMSQ4buRbmcgxJBhLCBIw6AgTuG7k™sIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1625000000000!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-color text-white py-8">
+        <div class="container text-center text-sm">
+            <p>&copy; 2025 Công ty cổ phần dịch vụ & Công nghệ CTS. Mọi quyền được bảo lưu.</p>
+            <p class="mt-2">
+                Tầng 14, tòa nhà Hapro, số 11B Cát Linh, Phường Quốc Tử Giám, Quận Đống Đa, Thành phố Hà Nội, Việt Nam | 05.68.91.2222 | <a href="mailto:contact@ctsco.vn" class="hover:underline text-accent-color">contact@ctsco.vn</a>
+            </p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="[Link tới trang LinkedIn của công ty]" target="_blank" class="text-secondary-color hover:text-accent-color transition-colors duration-200">LinkedIn</a>
+                <a href="https://www.facebook.com/ctsco.vn/" target="_blank" class="text-secondary-color hover:text-accent-color transition-colors duration-200">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
